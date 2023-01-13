@@ -1,0 +1,318 @@
+// General
+
+@font-face {
+    font-family: "Inter Bold";
+    src: url(/HomePage/assets/fonts/static/Inter-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Inter ExtraBold";
+    src: url(/HomePage/assets/fonts/static/Inter-ExtraBold.ttf);
+}
+
+@font-face {
+    font-family: "Inter Regular";
+    src: url(/HomePage/assets/fonts/static/Inter-Regular.ttf);
+}
+
+body {
+    font-family: "Inter Regular";
+    background-color: $background-color;
+    overflow-x: hidden
+}
+
+// Hamburguer
+
+.hamburger {
+    right: 0%;
+    width: 40px;
+    z-index: 5;
+
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    div {
+        position: relative;
+        width: 100%;
+        height: 4px;
+        border-radius: 3px;
+        background-color: $black-color;
+        margin-top: 6px;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+#toggle {
+    display: none;
+}
+
+#toggle:checked+.hamburger .top-bun {
+    transform: rotate(-45deg);
+    margin-top: 25px;
+}
+
+#toggle:checked+.hamburger .bottom-bun {
+    opacity: 0;
+    transform: rotate(45deg);
+}
+
+#toggle:checked+.hamburger .meat {
+    transform: rotate(45deg);
+    margin-top: -4px;
+}
+
+#toggle:checked+.hamburger+.nav {
+    top: 0;
+    transform: scale(1);
+}
+
+// Mobile Menu
+
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: $white-color;
+    height: 100vh;
+    width: 60%;
+    display: none;
+    padding: 30px;
+
+    .mobile-navbar-links {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        a {
+            text-decoration: none;
+            color: $black-color;
+        }
+
+
+    }
+}
+
+.active {
+    display: flex;
+    align-items: center;
+}
+
+// Navbar
+
+.navbar {
+
+    padding-top: 60px;
+    position: fixed;
+    width: 100%;
+    background-color: $background-color;
+
+    .navbar-links {
+
+        display: none;
+
+        @media (min-width: 768px) {
+            display: flex;
+            gap: 35px;
+            flex-direction: row;
+        }
+
+        a {
+            text-decoration: none;
+            color: $font-primary-color;
+
+            &:hover {
+                color: $primary-color;
+            }
+
+        }
+    }
+
+}
+
+// Home
+
+.home {
+
+    .sections {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+
+        @media (min-width: 992px) {
+            flex-direction: row;
+        }
+
+        .primary-section {
+            margin-top: 150px;
+            flex: 1 1 70%;
+
+            &-img-desktop {
+                display: none;
+
+                @media (min-width: 768px) {
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            &-img-mobile {
+                width: 100%;
+
+                @media (min-width: 768px) {
+                    display: none;
+                }
+            }
+
+
+            .primary-section-info {
+
+                display: flex;
+                flex-direction: column;
+                margin-top: 30px;
+
+                @media (min-width: 992px) {
+                    flex-direction: row;
+                    gap: 50px;
+                }
+
+                &-title {
+                    flex: 1 1 50%;
+
+                    h1 {
+                        color: $primary-color;
+                        font-family: Inter ExtraBold;
+                        font-size: 3rem;
+                        font-weight: bold;
+                    }
+                }
+
+                &-text {
+                    flex: 1 1 50%;
+                    color: $font-primary-color;
+
+                    .primary-btn {
+                        margin-top: 20px;
+                        color: white;
+                        background-color: $secondary-color;
+                        padding: 10px 20px;
+                        border-radius: 0;
+                        letter-spacing: 5px;
+                        font-family: "Inter Bold";
+                        font-size: 15px;
+
+                        &:hover,
+                        &:focus,
+                        &:active {
+                            background-color: black;
+                        }
+                    }
+                }
+
+
+            }
+
+        }
+
+        .sidebar {
+            flex: 1 1 30%;
+            background-color: $primary-color;
+            padding: 40px 30px;
+
+            @media (min-width: 992px) {
+                margin-top: 150px;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            &-title {
+                color: $tertiary-color;
+                font-family: Inter Bold;
+                font-size: 40px;
+                margin-bottom: 30px;
+            }
+
+            &-subtitle {
+                color: $white-color;
+                font-family: Inter Bold;
+                font-size: 20px;
+
+                &:hover {
+                    color: $tertiary-color;
+                }
+            }
+
+            &-text {
+                font-family: Inter Regular;
+                font-size: 14px;
+                color: $font-secondary-color;
+            }
+
+            .divider {
+                margin: 30px 0;
+                color: $white-color;
+            }
+        }
+
+    }
+
+
+}
+
+// Card Sections
+
+.cards-section {
+    margin: 80px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+        width: 100%;
+
+        @media (min-width: 992px) {
+            width: 350px;
+        }
+
+        .card-img {
+            width: 100px;
+            height: auto;
+        }
+
+        .card-content {
+
+            height: fit-content;
+
+            .card-number {
+                font-family: Inter Bold;
+                font-size: 1.8rem;
+                color: $grey-color;
+            }
+
+            .card-title {
+                font-family: Inter Bold;
+                font-size: 1.1rem;
+                color: $primary-color;
+            }
+
+            .card-text {
+                font-family: Inter Regular;
+                font-size: 1rem;
+                color: $font-primary-color;
+            }
+        }
+    }
+
+
+}
