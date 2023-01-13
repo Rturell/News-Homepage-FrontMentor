@@ -14,6 +14,12 @@ body {
   font-family: "Inter Regular";
   background-color: #FEFDF9;
   overflow-x: hidden;
+  margin-top: 160px;
+}
+@media (min-width: 768px) {
+  body {
+    margin-top: 0;
+  }
 }
 
 .hamburger {
@@ -85,33 +91,44 @@ body {
   align-items: center;
 }
 
-.navbar {
+.navbar-custom {
   position: fixed;
+  top: 0;
   width: 100%;
   background-color: #FEFDF9;
 }
-.navbar .navbar-container {
-  padding: 60px 0;
+@media (min-width: 768px) {
+  .navbar-custom {
+    position: relative;
+  }
+}
+.navbar-custom .navbar-container {
+  padding: 60px 0 60px 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navbar .navbar-container .navbar-links {
+@media (min-width: 768px) {
+  .navbar-custom .navbar-container {
+    padding: 60px 0 60px 0;
+  }
+}
+.navbar-custom .navbar-container .navbar-links {
   display: none;
 }
 @media (min-width: 768px) {
-  .navbar .navbar-container .navbar-links {
+  .navbar-custom .navbar-container .navbar-links {
     display: flex;
     gap: 35px;
     flex-direction: row;
   }
 }
-.navbar .navbar-container .navbar-links a {
+.navbar-custom .navbar-container .navbar-links a {
   text-decoration: none;
   color: #63616C;
 }
-.navbar .navbar-container .navbar-links a:hover {
+.navbar-custom .navbar-container .navbar-links a:hover {
   color: #020016;
 }
 
@@ -126,7 +143,6 @@ body {
   }
 }
 .home .sections .primary-section {
-  margin-top: 150px;
   flex: 1 1 70%;
 }
 .home .sections .primary-section-img-desktop {
@@ -187,11 +203,6 @@ body {
   flex: 1 1 30%;
   background-color: #020016;
   padding: 40px 30px;
-}
-@media (min-width: 992px) {
-  .home .sections .sidebar {
-    margin-top: 150px;
-  }
 }
 .home .sections .sidebar a {
   text-decoration: none;

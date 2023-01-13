@@ -18,7 +18,13 @@
 body {
     font-family: "Inter Regular";
     background-color: $background-color;
-    overflow-x: hidden
+    overflow-x: hidden;
+    margin-top: 160px;
+
+    @media (min-width: 768px) {
+        margin-top: 0;
+    }
+
 }
 
 // Hamburguer
@@ -100,38 +106,47 @@ body {
 
 // Navbar
 
-.navbar {
+.navbar-custom {
     position: fixed;
+    top: 0;
     width: 100%;
     background-color: $background-color;
 
+    @media (min-width: 768px) {
+        position: relative;
+    }
+
     .navbar-container {
-        padding: 60px 0;
+        padding: 60px 0 60px 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-            .navbar-links {
+        @media (min-width: 768px) {
+            padding: 60px 0 60px 0;
+        }
 
-                display: none;
+        .navbar-links {
 
-                @media (min-width: 768px) {
-                    display: flex;
-                    gap: 35px;
-                    flex-direction: row;
-                }
+            display: none;
 
-                a {
-                    text-decoration: none;
-                    color: $font-primary-color;
-
-                    &:hover {
-                        color: $primary-color;
-                    }
-
-                }
+            @media (min-width: 768px) {
+                display: flex;
+                gap: 35px;
+                flex-direction: row;
             }
+
+            a {
+                text-decoration: none;
+                color: $font-primary-color;
+
+                &:hover {
+                    color: $primary-color;
+                }
+
+            }
+        }
 
     }
 
@@ -153,7 +168,6 @@ body {
         }
 
         .primary-section {
-            margin-top: 150px;
             flex: 1 1 70%;
 
             &-img-desktop {
@@ -227,10 +241,6 @@ body {
             flex: 1 1 30%;
             background-color: $primary-color;
             padding: 40px 30px;
-
-            @media (min-width: 992px) {
-                margin-top: 150px;
-            }
 
             a {
                 text-decoration: none;
