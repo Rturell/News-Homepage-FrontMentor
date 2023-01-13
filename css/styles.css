@@ -86,26 +86,32 @@ body {
 }
 
 .navbar {
-  padding-top: 60px;
   position: fixed;
   width: 100%;
   background-color: #FEFDF9;
 }
-.navbar .navbar-links {
+.navbar .navbar-container {
+  padding: 60px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar .navbar-container .navbar-links {
   display: none;
 }
 @media (min-width: 768px) {
-  .navbar .navbar-links {
+  .navbar .navbar-container .navbar-links {
     display: flex;
     gap: 35px;
     flex-direction: row;
   }
 }
-.navbar .navbar-links a {
+.navbar .navbar-container .navbar-links a {
   text-decoration: none;
   color: #63616C;
 }
-.navbar .navbar-links a:hover {
+.navbar .navbar-container .navbar-links a:hover {
   color: #020016;
 }
 
